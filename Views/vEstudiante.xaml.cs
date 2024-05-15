@@ -1,3 +1,4 @@
+
 using Newtonsoft.Json;
 using S6.Models;
 using System.Collections.ObjectModel;
@@ -6,7 +7,7 @@ namespace S6.Views;
 
 public partial class vEstudiante : ContentPage
 {
-	private const string url = "http://192.168.110.170:50/moviles/wsestudiantes.php";
+	private const string url = "http://192.168.100.41:50/moviles/wsestudiantes.php";
 	private readonly HttpClient cliente =new HttpClient();
 	
 	private ObservableCollection<Estudiante> est;
@@ -17,14 +18,24 @@ public partial class vEstudiante : ContentPage
 
     }
 
-	public async void ObtenerDatos ()
-	{
-
+    public async void ObtenerDatos()
+    {
         var content = await cliente.GetStringAsync(url);
-        List<Estudiante> mostrar = JsonConvert.DeserializeObject<List<Estudiante>>(content);
-        est = new ObservableCollection<Estudiante>(mostrar);
-        ListEstudiantes.ItemsSource = est;
+        List<Estudiante> mostrar=JsonConvert.DeserializeObject<List<Estudiante>>(content);
+        est=new ObservableCollection<Estudiante>(mostrar);
+        listEstudiante.ItemsSource = est;
     }
-    
 
+    private void btnAgregar_Clicked(object sender, EventArgs e)
+    {
+        Navigation.PushAsync(new vAgregar());
+    }
+
+    private void listEstudiante_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+    {
+        var objEstudiante   =(Estudiante)e.SelectedItem;
+        Navigation.PushAsync(new vEliminar(objEstudiante));
+    }
+
+    
 }

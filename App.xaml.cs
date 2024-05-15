@@ -8,7 +8,7 @@ namespace S6
         {
             InitializeComponent();
 
-            MainPage = new Views.vEstudiante();
+            MainPage = new NavigationPage (new Views.vEstudiante());
         }
     }
 }

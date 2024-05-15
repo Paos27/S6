@@ -9,28 +9,59 @@
             FontSize="24"
             HorizontalTextAlignment="Center"   />
 
+        <Grid>
+                       
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                
+            </Grid.ColumnDefinitions>
 
-        <ListView x:Name =" ListEstudiantes">
+            
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                                
+            </Grid.RowDefinitions>
+
+            <Label Text="Codigo" Grid.Row="0" Grid.Column="0" HorizontalOptions="Center"  Margin="0,0,20,15"/>  
+            <Label Text="Nombre" Grid.Row="0" Grid.Column="1" HorizontalOptions="Center"  Margin="200,0,20,5"/>
+            <Label Text="Apellido" Grid.Row="0" Grid.Column="2" HorizontalOptions="Center"  Margin="200,0,20,5"/>
+            <Label Text="Edad" Grid.Row="0" Grid.Column="3" HorizontalOptions="Center"  Margin="200,0,20,5"/>
+
+        </Grid>
+
+        <ListView x:Name="listEstudiante" ItemSelected="listEstudiante_ItemSelected">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
                         <StackLayout>
                             <Grid>
-                                <!-- Definir la estructura del elemento de lista -->
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="Auto" />
-                                    <ColumnDefinition Width="Auto" />
-                                    <ColumnDefinition Width="Auto" />
-                                    <ColumnDefinition Width="Auto" />
-                                    <!-- Agregar más columnas según sea necesario -->
-                                </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
 
-                                <!-- Mostrar datos en las celdas del Grid -->
-                                <Label Text="{Binding Codigo}" Grid.Column="0" />
-                                <Label Text="{Binding Nombre}" Grid.Column="1" />
-                                <Label Text="{Binding Apellido}" Grid.Column="2" />
-                                <Label Text="{Binding Edad}" Grid.Column="3" />
-                                <!-- Agregar más elementos según sea necesario -->
+                            <Label x:Name="lblcodigo" Text="{Binding codigo}"
+                                       Grid.Row="0"
+                                       Grid.Column="0"/>
+                            <Label x:Name="lblnombre" Text="{Binding nombre}"
+                                        Grid.Row="0"
+                                        Grid.Column="1"/>
+                            <Label x:Name="lblapellido" Text="{Binding apellido}"
+                                        Grid.Row="0"
+                                        Grid.Column="2"/>
+                            <Label x:Name="lbledad" Text="{Binding edad}"
+                                        Grid.Row="0"
+                                        Grid.Column="3"/>
+
                             </Grid>
 
                         </StackLayout>
@@ -38,13 +69,18 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
             
+            
         </ListView>
         
         
         
         
         
-        
-        
+
+        <Button x:Name="btnAgregar"
+        Text="Agregar estudiante"
+        Clicked="btnAgregar_Clicked"/>
+
+
     </VerticalStackLayout>
 </ContentPage>
