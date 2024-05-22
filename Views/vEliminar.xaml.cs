@@ -21,7 +21,8 @@ public partial class vEliminar : ContentPage
 
          }
 
-
+    //cambios 
+    //no puedo garbar el git
 
     private async void btnActualizar_Clicked(object sender, EventArgs e)
 
@@ -59,7 +60,7 @@ public partial class vEliminar : ContentPage
             var parametros = new NameValueCollection();
             parametros.Add("codigo", txtCodigo.Text);
 
-            string url = "http://192.168.100.41:50/moviles/wsestudiantes.php"; // Asegúrate de que esta URL acepta eliminaciones
+            string url = "http://192.168.100.41:50/moviles/wsestudiantes.php"; 
 
             cliente.UploadValues(url, "DELETE", parametros);
 

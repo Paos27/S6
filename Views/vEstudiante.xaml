@@ -10,6 +10,7 @@
             HorizontalTextAlignment="Center"   />
 
         <Grid>
+<<<<<<< HEAD
                        
             
             <Grid.ColumnDefinitions>
@@ -81,6 +82,40 @@
         Text="Agregar estudiante"
         Clicked="btnAgregar_Clicked"/>
 
+=======
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                
+            </Grid.ColumnDefinitions>
+
+            
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                
+            </Grid.RowDefinitions>
+
+            <Label Text="Codigo" Grid.Row="0" Grid.Column="0" HorizontalOptions="Center"  Margin="0,0,20,15"/>
+            <Label Text="Nombre" Grid.Row="0" Grid.Column="1" HorizontalOptions="Center"  Margin="200,0,20,5"/>
+            <Label Text="Apellido" Grid.Row="0" Grid.Column="2" HorizontalOptions="Center"  Margin="200,0,20,5"/>
+            <Label Text="Edad" Grid.Row="0" Grid.Column="3" HorizontalOptions="Center"  Margin="200,0,20,5"/>
+
+            
+        </Grid>
+
+        <Grid x:Name="tabEst">
+            
+        </Grid>
+        
+        
+
+>>>>>>> 47096f21b1b1b1e2940f6e9128d2bc5c654cd677
 
     </VerticalStackLayout>
 </ContentPage>

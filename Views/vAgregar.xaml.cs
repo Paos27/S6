@@ -1,7 +1,7 @@
 using System.Net;
 
 namespace S6.Views;
-
+//actividad en clase
 public partial class vAgregar : ContentPage
 {
 	public vAgregar()
